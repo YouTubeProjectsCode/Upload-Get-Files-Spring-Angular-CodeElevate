@@ -1,0 +1,28 @@
+<button routerLink="/file">Upload File</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Content Type</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let file of files">
+            <td>
+                <h5>{{ file.filename }}</h5>
+            </td>
+            <td>
+                <h5>{{ file.contentType }}</h5>
+            </td>
+            <td>
+                <img style="width: 100px;" [src]="file.processedImg" alt="File Image" class="img-thumbnail" />
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="downloadFile(file.id)">Download</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
